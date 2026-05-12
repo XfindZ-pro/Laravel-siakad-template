@@ -207,8 +207,8 @@
                     data: {
                         labels: {!! json_encode(array_keys($angkatanData)) !!},
                         datasets: [
-                            { data: {!! json_encode(array_values($angkatanData)) !!}, borderColor: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.1)', fill: true, tension: 0.4, borderWidth: 4, pointRadius: 0 },
-                            { data: {!! json_encode(array_values($graduatedData)) !!}, borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.1)', fill: true, tension: 0.4, borderWidth: 4, pointRadius: 0 }
+                            { label: 'Pendaftaran', data: {!! json_encode(array_values($angkatanData)) !!}, borderColor: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.1)', fill: true, tension: 0.4, borderWidth: 4, pointRadius: 4, pointBackgroundColor: '#2563eb' },
+                            { label: 'Kelulusan', data: {!! json_encode(array_values($graduatedData)) !!}, borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.1)', fill: true, tension: 0.4, borderWidth: 4, pointRadius: 4, pointBackgroundColor: '#10b981' }
                         ]
                     },
                     options: { ...baseOptions, plugins: { legend: { display: true, position: 'bottom' } } }
