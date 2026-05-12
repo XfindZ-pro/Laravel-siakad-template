@@ -1,59 +1,72 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo">
 </p>
 
-## About Laravel
+<h1 align="center">🎓 SIAkad - Modern Academic Dashboard</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel" alt="Laravel">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind">
+  <img src="https://img.shields.io/badge/Alpine.js-3.x-8BC0D0?style=for-the-badge&logo=alpine.js" alt="Alpine.js">
+  <img src="https://img.shields.io/badge/Chart.js-4.x-FF6384?style=for-the-badge&logo=chart.js" alt="Chart.js">
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📝 Deskripsi Proyek
+**SIAkad** (Sistem Informasi Akademik) adalah aplikasi manajemen data mahasiswa yang dirancang dengan fokus pada **estetika premium** dan **pengalaman pengguna (UX)** yang modern. Dashboard ini mengintegrasikan visualisasi data secara real-time dan manajemen data yang efisien menggunakan ekosistem Laravel terbaru.
 
-## Learning Laravel
+## ✨ Fitur Unggulan
+- 📊 **Premium Analytics Dashboard**: Visualisasi tren pendaftaran, kelulusan, dan distribusi gender menggunakan *Chart.js*.
+- ⚡ **Compact Stats Tabs**: Ringkasan data akademik dalam bentuk tab kecil yang efisien ruang.
+- 🪟 **Modern Modal Interaction**: Sistem penambahan dan pengeditan mahasiswa menggunakan modal *non-full-screen* yang *scrollable* berbasis *Alpine.js*.
+- 📱 **Responsive UI**: Desain yang sepenuhnya adaptif untuk berbagai ukuran layar menggunakan *Tailwind CSS*.
+- 🔡 **Plus Jakarta Sans Typography**: Tipografi bersih dan profesional ala aplikasi modern kelas dunia.
+- 📄 **Advanced Data Table**: Tabel data mahasiswa yang rapi dengan sistem paginasi yang telah terintegrasi styling Tailwind.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Tech Stack
+| Teknologi | Kegunaan |
+| :--- | :--- |
+| **Laravel 11** | Core Framework & Backend Logic |
+| **Tailwind CSS** | Premium Styling & Responsive Layout |
+| **Alpine.js** | Lightweight Frontend Interactivity |
+| **Chart.js** | Data Visualization & Analytics |
+| **Vite** | Fast Asset Bundling & Development |
+| **MySQL** | Database Management System |
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Cara Instalasi
+1. Clone repository ini:
+   ```bash
+   git clone https://github.com/username/Laravel-siakad-template.git
+   ```
+2. Instal dependensi PHP:
+   ```bash
+   composer install
+   ```
+3. Instal dependensi Javascript:
+   ```bash
+   npm install
+   ```
+4. Copy file `.env.example` ke `.env` dan atur database Anda:
+   ```bash
+   cp .env.example .env
+   ```
+5. Generate application key:
+   ```bash
+   php artisan key:generate
+   ```
+6. Jalankan migrasi dan seeder (jika ada):
+   ```bash
+   php artisan migrate
+   ```
+7. Jalankan aplikasi:
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Laravel-siakad-template
+<p align="center">
+  Dibuat dengan ❤️ untuk Sistem Informasi Akademik yang lebih modern.
+</p>
