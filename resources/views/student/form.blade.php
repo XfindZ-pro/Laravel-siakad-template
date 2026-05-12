@@ -40,6 +40,40 @@
                     class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200 placeholder:text-slate-400">
             </div>
 
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 px-1">Program Studi</label>
+                    <select name="prodi" required class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200">
+                        <option value="Informatika">Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Teknik Elektro">Teknik Elektro</option>
+                        <option value="Teknik Mesin">Teknik Mesin</option>
+                        <option value="Teknik Sipil">Teknik Sipil</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 px-1">Angkatan</label>
+                    <input type="number" name="angkatan" value="2023" required class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 px-1">Gender</label>
+                    <select name="gender" required class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200">
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <div class="flex items-center pt-8">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="hidden" name="is_graduated" value="0">
+                        <input type="checkbox" name="is_graduated" value="1" class="w-5 h-5 rounded border-2 border-slate-200 text-slate-900 focus:ring-slate-900 transition-all">
+                        <span class="text-sm font-bold text-slate-700 group-hover:text-slate-900 transition-colors">Sudah Lulus</span>
+                    </label>
+                </div>
+            </div>
+
             <div class="flex justify-end gap-3 pt-4">
                 <button
                     type="button"
@@ -111,6 +145,40 @@
                     x-model="student.email"
                     required
                     class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 px-1">Program Studi</label>
+                    <select name="prodi" x-model="student.prodi" required class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200">
+                        <option value="Informatika">Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Teknik Elektro">Teknik Elektro</option>
+                        <option value="Teknik Mesin">Teknik Mesin</option>
+                        <option value="Teknik Sipil">Teknik Sipil</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 px-1">Angkatan</label>
+                    <input type="number" name="angkatan" x-model="student.angkatan" required class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 px-1">Gender</label>
+                    <select name="gender" x-model="student.gender" required class="w-full border-2 border-slate-100 bg-slate-50 p-4 rounded-2xl focus:border-slate-900 focus:bg-white focus:outline-none transition-all duration-200">
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <div class="flex items-center pt-8">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="hidden" name="is_graduated" value="0">
+                        <input type="checkbox" name="is_graduated" value="1" x-model="student.is_graduated" class="w-5 h-5 rounded border-2 border-slate-200 text-slate-900 focus:ring-slate-900 transition-all">
+                        <span class="text-sm font-bold text-slate-700 group-hover:text-slate-900 transition-colors">Sudah Lulus</span>
+                    </label>
+                </div>
             </div>
 
             <div class="flex justify-end gap-3 pt-4">
