@@ -77,6 +77,7 @@
 
                         <div class="flex items-center">
                             <button
+                                type="button"
                                 @click="openCreate = true"
                                 class="inline-flex items-center justify-center px-6 py-2.5 font-bold text-white transition-all bg-slate-900 hover:bg-blue-600 rounded-xl shadow-lg shadow-slate-200 active:scale-95 text-sm group">
                                 <svg class="w-4 h-4 mr-2 text-blue-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path></svg>
@@ -250,7 +251,6 @@
                         {{ $students->links() }}
                     </div>
                 </div>
-            </div>
             </div>
 
             @include('student.form')
