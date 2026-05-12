@@ -55,6 +55,7 @@
                             <option value="Teknik Mesin">Teknik Mesin</option>
                             <option value="Teknik Sipil">Teknik Sipil</option>
                             <option value="Psikologi">Psikologi</option>
+                            <option value="Kedokteran">Kedokteran</option>
                         </select>
                     </div>
                     <div>
@@ -148,6 +149,7 @@
                             <option value="Teknik Mesin">Teknik Mesin</option>
                             <option value="Teknik Sipil">Teknik Sipil</option>
                             <option value="Psikologi">Psikologi</option>
+                            <option value="Kedokteran">Kedokteran</option>
                         </select>
                     </div>
                     <div>
