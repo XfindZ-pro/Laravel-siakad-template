@@ -21,6 +21,7 @@
             openCreate: false,
             openEdit: false,
             openShow: false,
+            activeTab: 'data',
             student: { 
                 id: '', 
                 name: '', 
@@ -31,36 +32,63 @@
                 gender: 'Laki-laki'
             }
         }">
+
+            <!-- Navbar -->
+            <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
+                <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div class="flex justify-between h-20">
+                        <div class="flex items-center gap-12">
+                            <!-- Logo -->
+                            <div class="flex items-center gap-2">
+                                <h1 class="text-3xl font-black text-slate-900 tracking-tight">
+                                    SIAkad<span class="text-blue-600">.</span>
+                                </h1>
+                            </div>
+
+                            <!-- Nav Links -->
+                            <div class="hidden md:flex items-center gap-8">
+                                <a href="#" 
+                                   @click.prevent="activeTab = 'data'"
+                                   :class="activeTab === 'data' ? 'text-blue-600' : 'text-slate-500 hover:text-slate-900'"
+                                   class="text-sm font-bold transition-colors flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2-2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                                    Data Mahasiswa
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <button
+                                @click="openCreate = true"
+                                class="inline-flex items-center justify-center px-6 py-3 font-bold text-white transition-all duration-200 bg-slate-900 rounded-xl hover:bg-blue-600 shadow-lg shadow-slate-200 active:scale-95 text-sm">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                                Add New Student
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
             
             <!-- Main Content Container -->
-            <div class="max-w-5xl mx-auto py-12 px-6">
+            <div class="max-w-7xl mx-auto py-10 px-6 lg:px-8">
 
                 <!-- Header Section -->
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 animate-fade-in-up">
-                    <div>
-                        <div class="inline-block px-3 py-1 rounded-lg bg-slate-100 text-slate-600 text-xs font-bold tracking-wider uppercase mb-3">
-                            Management Dashboard
-                        </div>
-                        <h1 class="text-5xl font-black text-slate-900 tracking-tight">
-                            SIAkad<span class="text-accent">.</span>
-                        </h1>
-                        <p class="text-slate-600 mt-3 text-lg max-w-md leading-relaxed font-medium">
-                            Efficiently manage student data with our professional academic system.
-                        </p>
+                <div class="mb-10 animate-fade-in-up" x-show="activeTab === 'data'">
+                    <div class="inline-block px-3 py-1 rounded-lg bg-blue-50 text-blue-600 text-xs font-bold tracking-wider uppercase mb-3">
+                        Academic Overview
                     </div>
-
-                    <button
-                        @click="openCreate = true"
-                        class="inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-slate-900 rounded-xl hover:bg-slate-800 shadow-xl shadow-slate-200 active:scale-95">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                        </svg>
-                        Add New Student
-                    </button>
+                    <h2 class="text-4xl font-black text-slate-900 tracking-tight">
+                        Data Mahasiswa
+                    </h2>
+                    <p class="text-slate-500 mt-2 text-lg font-medium">
+                        Visualisasi statistik dan manajemen data mahasiswa SIAkad.
+                    </p>
                 </div>
 
                 <!-- Charts Section -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 animate-fade-in-up" style="animation-delay: 0.1s">
+                <div x-show="activeTab === 'data'" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 animate-fade-in-up" style="animation-delay: 0.1s">
                     <!-- Bar Chart: Students per Prodi -->
                     <div class="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200">
                         <h3 class="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
@@ -107,7 +135,7 @@
                 </div>
 
                 <!-- Main Data Table Card -->
-                <div class="bg-white rounded-3xl shadow-2xl shadow-slate-200/50 border border-slate-200 overflow-hidden animate-scale-in">
+                <div x-show="activeTab === 'data'" class="bg-white rounded-3xl shadow-2xl shadow-slate-200/50 border border-slate-200 overflow-hidden animate-scale-in" style="animation-delay: 0.2s">
                     
                     <!-- Table Header -->
                     <div class="grid grid-cols-6 bg-slate-50 border-b border-slate-200 px-8 py-5 font-bold text-slate-500 text-xs uppercase tracking-widest">
