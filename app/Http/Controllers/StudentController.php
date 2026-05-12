@@ -19,20 +19,32 @@ class StudentController extends Controller
             ->pluck('total', 'prodi')
             ->all();
 
-        // Data for Line Chart: Students per Angkatan
+        // Data for 3rd Chart: Combined Enrollment vs Graduation
         $angkatanData = Student::select('angkatan', \DB::raw('count(*) as total'))
             ->groupBy('angkatan')
             ->orderBy('angkatan')
             ->pluck('total', 'angkatan')
             ->all();
 
-        // Data for Chart: Graduated per Angkatan
-        $graduatedData = Student::select('angkatan', \DB::raw('count(*) as total'))
+        $graduatedDataRaw = Student::select('angkatan', \DB::raw('count(*) as total'))
             ->where('is_graduated', true)
             ->groupBy('angkatan')
-            ->orderBy('angkatan')
             ->pluck('total', 'angkatan')
             ->all();
+
+        // Ensure both datasets have the same years (keys)
+        $graduatedData = [];
+        foreach ($angkatanData as $year => $total) {
+            $graduatedData[$year] = $graduatedDataRaw[$year] ?? 0;
+        }
+
+        // Trick: If only one year exists, add previous year as 0 to force a "Line" to appear
+        if (count($angkatanData) === 1) {
+            $firstYear = array_key_first($angkatanData);
+            $prevYear = $firstYear - 1;
+            $angkatanData = [$prevYear => 0] + $angkatanData;
+            $graduatedData = [$prevYear => 0] + $graduatedData;
+        }
 
         // Data for 4th Chart: Gender Distribution (Pie Chart)
         $genderData = Student::select('gender', \DB::raw('count(*) as total'))
